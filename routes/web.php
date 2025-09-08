@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -16,6 +17,46 @@ use Illuminate\Support\Facades\Route;
 // Rota (URL) -> Função (Lógica para processar a requisição)
 
 Route::get('/', function () {
+
+//$post = Post::find(1); //Procura o post com id 1 
+// find() e usado para buscar um registro pelo seu ID primário.
+//where() é usado para adicionar condições às consultas, permitindo filtrar os resultados com base em critérios específicos.
+//first() retorna o primeiro resultado da consulta.
+//get() retorna todos os resultados que correspondem à consulta.
+// Pode-se encadear várias condições usando where para criar consultas mais complexas.
+//Where()-> where()->first(); 
+//all() retorna todos os registros da tabela associada ao modelo.
+// AND
+// OR
+//$post = Post::where('id', 1)->first();
+
+
+
+
+
+//$post = Post::all(); //Retorna todos os posts
+
+
+$post = Post::where('title', 'LIKE','%post%')->get(); //Retorna todos os posts que contenham a palavra post no título. % é um coringa que representa qualquer sequência de caracteres antes ou depois da palavra post.
+
+
+
+
+//$post = new Post();
+//$post->title = 'Meu primeiro post';
+//$post->body = 'Conteúdo do meu primeiro post';
+//$post->save();
+
+
+//Outro metodo de inserir dados. Usar o create quando a model estiver com o fillable configurado.
+//Create ja deixar salvo no banco de dados.
+//$post = Post::create([
+ //   'title' => 'Meu primeiro post',
+ //   'body' => 'Conteúdo do meu primeiro post'
+//]);
+
+dd($post);
+
     return view('welcome');
 });
 
