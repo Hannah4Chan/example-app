@@ -17,7 +17,10 @@ use Illuminate\Support\Facades\Route;
 // Rota (URL) -> Função (Lógica para processar a requisição)
 
 Route::get('/', function () {
+          //1 -> 1
+    $user = User::with('profile')->find(1);
 
+    dd($user);
 
 
 
