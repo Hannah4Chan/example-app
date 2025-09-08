@@ -10,9 +10,9 @@
     {{-- js, css, img --}}
 </head>
 <body>
-@yield('content')  
-
+@yield('content')    
 @vite('resources/js/app.js')
+
   
 
 </body>

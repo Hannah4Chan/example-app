@@ -1,4 +1,8 @@
 .title{
 
-    color: rgba(255, 0, 0, 0.918);
+    color: red; 
+}
+
+.user-name {
+    color: brown;
 }
