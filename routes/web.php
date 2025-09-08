@@ -18,6 +18,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
+
+
+
+
+
+
+
+
 //$post = Post::find(1); //Procura o post com id 1 
 // find() e usado para buscar um registro pelo seu ID primário.
 //where() é usado para adicionar condições às consultas, permitindo filtrar os resultados com base em critérios específicos.
@@ -37,7 +45,7 @@ Route::get('/', function () {
 //$post = Post::all(); //Retorna todos os posts
 
 
-$post = Post::where('title', 'LIKE','%post%')->get(); //Retorna todos os posts que contenham a palavra post no título. % é um coringa que representa qualquer sequência de caracteres antes ou depois da palavra post.
+//$post = Post::where('title', 'LIKE','%post%')->get(); //Retorna todos os posts que contenham a palavra post no título. % é um coringa que representa qualquer sequência de caracteres antes ou depois da palavra post.
 
 
 
@@ -54,6 +62,28 @@ $post = Post::where('title', 'LIKE','%post%')->get(); //Retorna todos os posts q
  //   'title' => 'Meu primeiro post',
  //   'body' => 'Conteúdo do meu primeiro post'
 //]);
+
+
+
+
+//ATUALIZAÇÃO DE REGISTROS  
+//Usar input quando a model estiver com o fillable configurado.
+
+$input = [
+    'title' => 'Meu Novo Título vindo do input',
+    'body' => 'Conteúdo do meu primeiro post atualizado'
+];
+$post = Post::find(1);
+$post->fill($input); //Preenche o modelo com os dados do array $input
+
+
+//DELETANDO REGISTROS
+//$post = Post::find(1);
+//$post->delete(); //Deleta o registro do banco de dados
+
+
+
+$post->save();  
 
 dd($post);
 
