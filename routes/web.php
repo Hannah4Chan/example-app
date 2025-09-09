@@ -17,17 +17,27 @@ use Illuminate\Support\Facades\Route;
 // Rota (URL) -> Função (Lógica para processar a requisição)
 
 Route::get('/', function () {
-          //1 -> 1
-    $user = User::with('profile')->find(1);
-    //Criando perfil para o usuário
+
+
+          //1 -> 1 relacionamento entre user e profile
+    //$user = User::with('profile')->find(1);
+    
     //$user->profile()->create([
-       // 'type' => 'PJ',
-        //'document_number' => '98765432143'
+     //   'type' => 'PJ',
+       // 'document_number' => '98765432143'
     //]);
 
-    dd($user->profile->document_number) ;
+    //dd($user);
 
     
+
+    //1 ->N relacionamento entre user e posts
+
+    
+
+
+
+
 
 
 
