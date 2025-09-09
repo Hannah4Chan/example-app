@@ -19,8 +19,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
           //1 -> 1
     $user = User::with('profile')->find(1);
+    //Criando perfil para o usuário
+    //$user->profile()->create([
+       // 'type' => 'PJ',
+        //'document_number' => '98765432143'
+    //]);
 
-    dd($user);
+    dd($user->profile->document_number) ;
+
+    
 
 
 
