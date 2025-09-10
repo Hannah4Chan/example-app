@@ -31,9 +31,38 @@ Route::get('/', function () {
 
     
 
+
+//N -> N relacionamento entre muitos users e roles (roles sao perfis de usuário, como admin, editor, etc)
+//PIVOT sao tabelas intermediarias que armazenam os relacionamentos entre duas tabelas principais.
+// users
+// role_user se identificar desta forma, o laravel ja entende que é uma tabela pivot.
+//roles 
+
+
+
+
+
+
+
+
+
     //1 ->N relacionamento entre user e posts
 
     
+$user = user::with('posts','profile')->find(1);
+$user->posts()->create([
+    'title' => 'Me post de relacionamento',
+    'body' => 'Meu texto aqui'
+]);
+
+dd($user);
+
+
+
+
+
+
+
 
 
 
@@ -89,12 +118,14 @@ Route::get('/', function () {
 //ATUALIZAÇÃO DE REGISTROS  
 //Usar input quando a model estiver com o fillable configurado.
 
-$input = [
-    'title' => 'Meu Novo Título vindo do input',
-    'body' => 'Conteúdo do meu primeiro post atualizado'
-];
-$post = Post::find(1);
-$post->fill($input); //Preenche o modelo com os dados do array $input
+
+
+//$input = [
+    //'title' => 'Meu Novo Título vindo do input',
+  //  'body' => 'Conteúdo do meu primeiro post atualizado'
+//];
+//$post = Post::find(1);
+//$post->fill($input); //Preenche o modelo com os dados do array $input
 
 
 //DELETANDO REGISTROS
@@ -103,9 +134,9 @@ $post->fill($input); //Preenche o modelo com os dados do array $input
 
 
 
-$post->save();  
+//$post->save();  
 
-dd($post);
+//dd($post);
 
     return view('welcome');
 });
