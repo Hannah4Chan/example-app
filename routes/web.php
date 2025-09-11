@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use App\Models\Post;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +40,16 @@ Route::get('/', function () {
 //roles 
 
 
+//$roles = Role::all();
+//dd($roles);
+
+$user = user::find(1);
+
+
+
+dd($user);
+
+
 
 
 
@@ -49,13 +60,13 @@ Route::get('/', function () {
     //1 ->N relacionamento entre user e posts
 
     
-$user = user::with('posts','profile')->find(1);
-$user->posts()->create([
-    'title' => 'Me post de relacionamento',
-    'body' => 'Meu texto aqui'
-]);
+//$user = user::with('posts','profile')->find(1);
+//$user->posts()->create([
+   // 'title' => 'Me post de relacionamento',
+    //'body' => 'Meu texto aqui'
+//]);
 
-dd($user);
+//dd($user);
 
 
 
