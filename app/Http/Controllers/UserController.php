@@ -33,6 +33,13 @@ class UserController extends Controller
 
 
 
+    public function store()
+    {
+
+        dd('store');
+    }
+
+
     public function show(User $user)
     {
        

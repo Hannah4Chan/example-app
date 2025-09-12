@@ -169,6 +169,11 @@ dd($user);
 
 Route::get('admin/usuarios/cadastro', [UserController::class,'create'] );
 
+Route::post('admin/usuarios/cadastro', [UserController::class,'store'] );
+
+
+
+
 Route::get('admin/usuarios',[UserController::class, 'index'] ); 
 Route::get('admin/usuarios/{user}', [UserController::class,'show'] );
 
