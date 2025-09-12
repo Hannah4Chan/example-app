@@ -43,9 +43,12 @@ Route::get('/', function () {
 //$roles = Role::all();
 //dd($roles);
 
-$user = user::find(1);
+$user = user::with('roles')->find(1);
 
-
+$user->roles()->attach(1); 
+//attach adiciona um ou mais registros na tabela pivot associando o usuário aos roles especificados.
+//detach remove um ou mais registros da tabela pivot, desassociando o usuário dos roles
+//$user->roles()->detach([1]); //Remove o role com id 1 do usuário
 
 dd($user);
 
