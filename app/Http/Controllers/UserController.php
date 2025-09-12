@@ -40,7 +40,7 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:8|confirmed',
         ]);
-        dd($request->validate(  $input));
+        //dd($request->validate(  $input));
     }
 
 
