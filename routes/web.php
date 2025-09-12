@@ -45,7 +45,9 @@ Route::get('/', function () {
 
 $user = user::with('roles')->find(1);
 
-$user->roles()->attach(1); 
+$user->roles()->sync([1, 2]); 
+//sync sincroniza os roles do usuário com os IDs fornecidos no array. Ele adiciona novos roles e remove os que não estão na lista, garantindo que o usuário tenha exatamente os roles especificados.
+//$user->roles()->attach(1); 
 //attach adiciona um ou mais registros na tabela pivot associando o usuário aos roles especificados.
 //detach remove um ou mais registros da tabela pivot, desassociando o usuário dos roles
 //$user->roles()->detach([1]); //Remove o role com id 1 do usuário
@@ -166,3 +168,10 @@ dd($user);
 //Json formato de dados leve e amplamente utilizado para troca de informações entre sistemas.
 Route::get('admin/usuarios',[UserController::class, 'index'] ); 
 Route::get('admin/usuarios/{user}', [UserController::class,'show'] );
+
+Route::get('admin/usuarios/cadastar' ,
+ [UserController::class,''] );
+
+
+
+
