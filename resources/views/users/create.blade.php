@@ -11,6 +11,23 @@
 
  <form action="{{ route('users.create') }}" method="post">
     @csrf
+
+    {{ $errors ->any() }}
+    @if($errors ->any())
+
+        @foreach ($errors->all() as $error)
+            <div style="color:red">{{ $error }}</div>
+        
+        
+       
+        
+        @endforeach
+    
+    @endif
+
+
+
+
     <div>
         <label for="">Nome:</label>
         <input type="text" name="name" >
