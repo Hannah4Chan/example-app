@@ -7,8 +7,10 @@
 @section('content')
 
  <h1>Cadastro de Usuario</h1>
+ <a href="{{ route('users.index') }}">Listar Usuarios</a>
 
- <form action="" method="post">
+ <form action="{{ route('users.create') }}" method="post">
+    @csrf
     <div>
         <label for="">Nome:</label>
         <input type="text" name="name" >
