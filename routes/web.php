@@ -166,12 +166,11 @@ dd($user);
 
 
 //Json formato de dados leve e amplamente utilizado para troca de informações entre sistemas.
+
+Route::get('admin/usuarios/cadastro', [UserController::class,'create'] );
+
 Route::get('admin/usuarios',[UserController::class, 'index'] ); 
 Route::get('admin/usuarios/{user}', [UserController::class,'show'] );
-
-Route::get('admin/usuarios/cadastar' ,
- [UserController::class,''] );
-
 
 
 
