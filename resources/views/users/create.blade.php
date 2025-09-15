@@ -12,7 +12,7 @@
  <form action="{{ route('users.create') }}" method="post">
     @csrf
 
-    {{ $errors ->any() }}
+   
     @if($errors ->any())
 
         @foreach ($errors->all() as $error)
@@ -30,14 +30,14 @@
 
     <div>
         <label for="">Nome:</label>
-        <input type="text" name="name" >
+        <input type="text" name="name" value="{{ old('name') }}" >
 
 
     </div>
 
     <div>
         <label for="">Email:</label>
-        <input type="text" name="email">
+        <input type="text" name="email" value="{{ old('email') }}">
 
 
     </div>
@@ -48,6 +48,12 @@
 
 
     </div>
+
+    <label for="">Avatar</label>
+    <input type="file" name="avatar">
+
+
+
 
     <div>
         <button type="submit">Cadastrar</button>
