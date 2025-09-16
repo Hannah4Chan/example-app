@@ -4,3 +4,7 @@ import.meta.glob([
 ]);
 
 console.log('Hello, World Laravel!');
+
+import './bootstrap';
+
+import 'admin-lte';
