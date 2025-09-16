@@ -68,6 +68,8 @@
       integrity="sha256-+uGLJmmTKOqBr+2E6KDYs/NRsHxSkONXFHUL0fy2O/4="
       crossorigin="anonymous"
     />
+
+    @vite('resources/scss/app.scss')
   </head>
   <!--end::Head-->
   <!--begin::Body-->
@@ -1452,6 +1454,8 @@
       sparkline3.render();
     </script>
     <!--end::Script-->
+
+    @vite('resources/js/app.js')
   </body>
   <!--end::Body-->
 </html>
