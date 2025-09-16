@@ -9,7 +9,11 @@
  <h1>Cadastro de Usuario</h1>
  <a href="{{ route('users.index') }}">Listar Usuarios</a>
 
- <form action="{{ route('users.create') }}" method="post">
+ <form action="{{ route('users.create') }}" 
+ method="post"
+ enctype="multipart/form-data"
+ 
+ >
     @csrf
 
    
